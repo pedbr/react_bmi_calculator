@@ -80,3 +80,8 @@ body {
   background: white;
   color: #25c381;
 }
+
+.metric-form {
+  display: flex;
+  flex-direction: column;
+}
