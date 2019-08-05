@@ -8,7 +8,7 @@ body {
 }
 
 .main-div {
-  height: 80vh;
+  height: 90vh;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -19,4 +19,30 @@ body {
 .title {
   margin: 30px;
   font-size: 50px;
+}
+
+.weight-div {
+  margin: 20px;
+}
+
+.height.div {
+  margin: 20px;
+}
+
+.result-div {
+  display: flex;
+  text-align: center;
+  padding: 20px;
+  color: #25c381;
+  background: white;
+  border-radius: 10px;
+  margin: 40px;
+}
+
+.input-box {
+  border-radius: 10px;
+  height: 20px;
+  border: none;
+  outline: none;
+  text-align: center;
 }

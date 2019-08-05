@@ -13,7 +13,7 @@ export const bmiCalculation = (weight, height, method) => {
     if (isNaN(finalBMI) || !isFinite(finalBMI) || finalBMI === 0) {
       return '';
     } else {
-      return `You are ${BMIMessage} with a BMI of ${finalBMI}`;
+      return ` You are ${BMIMessage} with a BMI of ${finalBMI}`;
     }      
   }
   
