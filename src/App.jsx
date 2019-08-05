@@ -15,14 +15,19 @@ class App extends Component {
     return (
       <div className="main-div">
         <div className="title">BMI Calculator</div>
+        <div className="methods-buttons">
+          <div className="metric-button">Metric</div>
+          <div className="imperial-button">Imperial</div>
+        </div>
+        <div className="metric-form">
         <div className="weight-div">
           <label>Weight (kg) </label>
           <input className="input-box" name="weight" value={this.state.weight} onChange={ (e) => this.setState({ weight: e.target.value })} />
         </div>
-
         <div className="height-div">
           <label>Height (cm) </label>
           <input className="input-box" name="height" value={this.state.height} onChange={ (e) => this.setState({ height: e.target.value })} />
+        </div>
         </div>
         <div className="result-div">
         <div className="result-indicator">Result: </div>
