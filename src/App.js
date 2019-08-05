@@ -25,7 +25,7 @@ class App extends Component {
           <input className="input-box" name="height" value={this.state.height} onChange={ (e) => this.setState({ height: e.target.value })} />
         </div>
         <div className="result-div">
-        <div>Result: </div>
+        <div className="result-indicator">Result: </div>
         <DisplayResult
           weight={this.state.weight}
           height={this.state.height}
