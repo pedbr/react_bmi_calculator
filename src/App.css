@@ -1,5 +1,22 @@
 body {
+  height: 100vh;
   background: #34e89e;
-  background: -webkit-linear-gradient(to right, #34e89e, #0f3443); 
-  background: linear-gradient(to right, #34e89e, #0f3443); 
+  background: -webkit-linear-gradient(to right, #34e89e, #0f3443);
+  background: linear-gradient(to right, #34e89e, #0f3443);
+  font-family: "Didact Gothic", sans-serif;
+  color: white;
+}
+
+.main-div {
+  height: 80vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  margin: 30px;
+  font-size: 50px;
 }
