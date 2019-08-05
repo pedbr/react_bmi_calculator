@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import DisplayResult from './Components/displayResult';
 import "./App.css";
 
 class App extends Component {
