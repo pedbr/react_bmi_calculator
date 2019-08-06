@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import DisplayResult from './Components/DisplayResult';
-import MethodSelect from './Components/MethodSelect';
+import DisplayResult from "./Components/DisplayResult";
+import MethodSelect from "./Components/MethodSelect";
 import "./App.css";
 
 class App extends Component {
@@ -9,29 +9,53 @@ class App extends Component {
     this.state = {
       weight: "",
       height: "",
-      method: ""
+      method: "metric"
     };
   }
+
+  methodChange = event => {
+    this.setState({ method: event.target.value });
+  };
+
+
 
   render() {
     return (
       <div className="main-div">
         <div className="title">BMI Calculator</div>
+        <div>
+          <MethodSelect
+            method={this.state.method}
+            onChangeValue={this.methodChange}
+          />
+        </div>
         <div className="weight-div">
-          <label>Weight (kg) </label>
-          <input className="input-box" name="weight" value={this.state.weight} onChange={ (e) => this.setState({ weight: e.target.value })} />
+          <label>Weight</label>
+          <input
+            className="input-box"
+            name="weight"
+            placeholder={this.state.method === 'metric' ? 'kg' : 'lbs'}
+            value={this.state.weight}
+            onChange={e => this.setState({ weight: e.target.value })}
+          />
         </div>
 
         <div className="height-div">
-          <label>Height (cm) </label>
-          <input className="input-box" name="height" value={this.state.height} onChange={ (e) => this.setState({ height: e.target.value })} />
+          <label>Height</label>
+          <input
+            className="input-box"
+            name="height"
+            placeholder={this.state.method === 'metric' ? 'cm' : 'in'}
+            value={this.state.height}
+            onChange={e => this.setState({ height: e.target.value })}
+          />
         </div>
         <div className="result-div">
-        <div className="result-indicator">Result: </div>
-        <DisplayResult
-          weight={this.state.weight}
-          height={this.state.height}
-        />
+          <div className="result-indicator">Result: </div>
+          <DisplayResult
+            weight={this.state.weight}
+            height={this.state.height}
+          />
         </div>
       </div>
     );
