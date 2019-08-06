@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import DisplayResult from './Components/DisplayResult';
+import MethodSelect from './Components/MethodSelect';
 import "./App.css";
 
 class App extends Component {
@@ -7,7 +8,8 @@ class App extends Component {
     super(props);
     this.state = {
       weight: "",
-      height: ""
+      height: "",
+      method: ""
     };
   }
 
