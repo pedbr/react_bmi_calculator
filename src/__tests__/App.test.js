@@ -4,19 +4,19 @@ import { stub } from 'sinon';
 
 import DisplayResult from '../Components/DisplayResult';
 import MethodSelect from '../Components/MethodSelect';
-import App from './App';
+import App from '../App';
 
 describe('<App />', () => {
   it('renders header', () => {
     const component = shallow(<App />);
-    const header = <h1>BMI Converter</h1>;
+    const header = <div className="title">BMI Calculator</div>;
     expect(component.contains(header)).toEqual(true);
   });
 
   it('shows metric as the standard method', () => {
     const component = shallow(<App />);
-    const weightLabel = <label>Weight(kg)</label>;
-    const heightLabel = <label>Height(cm)</label>;
+    const weightLabel = <label>Weight</label>;
+    const heightLabel = <label>Height</label>;
     expect(component.contains(weightLabel)).toEqual(true);
     expect(component.contains(heightLabel)).toEqual(true);
   })
@@ -24,8 +24,8 @@ describe('<App />', () => {
   it('can change method', () => {
     const onChangeValue = stub();
     const component = shallow(<App onChangeValue={onChangeValue} />);
-    const weightLabel = <label>Weight(lbs)</label>;
-    const heightLabel = <label>Height(inches)</label>;
+    const weightLabel = <label>Weight</label>;
+    const heightLabel = <label>Height</label>;
     component.find("MethodSelect").prop('onChangeValue')({target: {value:'imperial'}});
     expect(component.contains(weightLabel)).toEqual(true);
     expect(component.contains(heightLabel)).toEqual(true);
@@ -35,13 +35,13 @@ describe('<App />', () => {
 describe('<DisplayResult />', () => {
   it('displays the calulation correct(metric)', () => {
     const component = shallow(<DisplayResult method='metric' weight='100' height='195'/>)
-    const response = <div id='response'>You are Overweight with a BMI of 26.3</div>
+    const response = <div id='response'> You are Overweight with a BMI of 26.3</div>
     expect(component.contains(response)).toEqual(true)
   })
 
   it('displays the calulation correct(imperial)', () => {
     const component = shallow(<DisplayResult method='imperial' weight='140' height='73'/>)
-    const response = <div id='response'>You are Underweight with a BMI of 18.47</div>
+    const response = <div id='response'> You are Underweight with a BMI of 18.47</div>
     expect(component.contains(response)).toEqual(true)
   })
 

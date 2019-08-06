@@ -55,6 +55,7 @@ class App extends Component {
           <DisplayResult
             weight={this.state.weight}
             height={this.state.height}
+            method={this.state.method}
           />
         </div>
       </div>
