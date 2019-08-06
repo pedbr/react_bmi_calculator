@@ -15,8 +15,8 @@ describe('<App />', () => {
 
   it('shows metric as the standard method', () => {
     const component = shallow(<App />);
-    const weightLabel = <label>Weight</label>;
-    const heightLabel = <label>Height</label>;
+    const weightLabel = <label>Weight (kg)</label>;
+    const heightLabel = <label>Height (cm)</label>;
     expect(component.contains(weightLabel)).toEqual(true);
     expect(component.contains(heightLabel)).toEqual(true);
   })
@@ -24,8 +24,8 @@ describe('<App />', () => {
   it('can change method', () => {
     const onChangeValue = stub();
     const component = shallow(<App onChangeValue={onChangeValue} />);
-    const weightLabel = <label>Weight</label>;
-    const heightLabel = <label>Height</label>;
+    const weightLabel = <label>Weight (lbs)</label>;
+    const heightLabel = <label>Height (in)</label>;
     component.find("MethodSelect").prop('onChangeValue')({target: {value:'imperial'}});
     expect(component.contains(weightLabel)).toEqual(true);
     expect(component.contains(heightLabel)).toEqual(true);

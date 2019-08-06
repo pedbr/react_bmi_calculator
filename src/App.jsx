@@ -30,7 +30,7 @@ class App extends Component {
           />
         </div>
         <div className="weight-div">
-          <label>Weight</label>
+          <label>Weight {this.state.method === 'metric' ? '(kg)' : '(lbs)'}</label>
           <input
             className="input-box"
             name="weight"
@@ -41,7 +41,7 @@ class App extends Component {
         </div>
 
         <div className="height-div">
-          <label>Height</label>
+          <label>Height {this.state.method === 'metric' ? '(cm)' : '(in)'}</label>
           <input
             className="input-box"
             name="height"
